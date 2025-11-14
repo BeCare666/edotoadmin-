@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'Montserrat-bold', sans-serif !important;
+  }
+
+  :root {
+    /*
+    * primary color - bleu    S
+    */
+    --color-accent: 0, 64, 255;
+    /* Bleu vif principal */
+    --color-accent-hover: 0, 38, 153;
+    /* Bleu marine foncé pour hover */
+    --color-accent-300: 51, 102, 255;
+    /* Bleu moyen clair (icônes secondaires) */
+    --color-accent-400: 38, 132, 255;
+    /* Bleu lumineux */
+    --color-accent-500: 0, 64, 255;
+    /* Accent principal */
+    --color-accent-600: 0, 64, 255;
+    /* Variante accent */
+    --color-accent-700: 0, 38, 153;
+    /* Marine profond */
+
+    /* light & dark */
+    --color-light: 255, 255, 255;
+    --color-dark: 0, 0, 0;
+    --color-muted-black: 17, 17, 17;
+
+    /* text colors */
+    --text-base: 102, 102, 102;
+    --text-base-dark: 51, 51, 51;
+    --text-muted: 156, 163, 175;
+    --text-muted-light: 209, 213, 219;
+    --text-sub-heading: 55, 65, 81;
+    --text-heading: 31, 41, 55;
+    --text-bolder: 31, 41, 55;
+
+    /* border colors */
+    --color-border-50: 249, 250, 251;
+    --color-border-100: 243, 244, 246;
+    --color-border-200: 229, 231, 235;
+    --color-border-base: 209, 213, 219;
+    --color-border-400: 156, 163, 175;
+
+    /* gray overrides */
+    --color-gray-50: 249, 250, 251;
+    --color-gray-100: 243, 244, 246;
+    --color-gray-200: 229, 231, 235;
+    --color-gray-300: 209, 213, 219;
+    --color-gray-400: 156, 163, 175;
+    --color-gray-500: 107, 114, 128;
+    --color-gray-600: 0, 38, 153;
+    --color-gray-700: 55, 65, 81;
+    --color-gray-800: 31, 41, 55;
+    --color-gray-900: 31, 41, 55;
+
+    /* orange palette */
+    --color-orange-50: 255, 247, 237;
+    --color-orange-100: 255, 237, 213;
+    --color-orange-200: 254, 215, 170;
+    --color-orange-300: 253, 186, 116;
+    --color-orange-400: 251, 146, 60;
+    --color-orange-500: 249, 115, 22;
+    --color-orange-600: 234, 88, 12;
+    --color-orange-700: 194, 65, 12;
+    --color-orange-800: 154, 52, 18;
+    --color-orange-900: 124, 45, 18;
+
+    /* status colors */
+    --color-pending: 201, 161, 22;
+    --color-processing: 158, 117, 0;
+    --color-complete: 0, 64, 255;
+    /* bleu pour complet */
+    --color-canceled: 227, 110, 1;
+    --color-failed: 238, 43, 0;
+    --color-out-for-delivery: 51, 102, 204;
+    /* bleu pour livraison */
+    /* bleu pour livraison */
+    /* icon color - pink */
+    --color-icon: 0, 38, 153;
+
+    /* headings */
+    --h1: 2.5rem;
+    --h2: 2rem;
+    --h3: 1.5rem;
+    --h4: 1.25rem;
+    --h5: 1.125rem;
+    --h6: 1rem;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  /* Firefox 
+    body {
+    @apply font-body;
+    background-color: var(--color-gray-400);
+    color: white;
+  }
+  */
+  body {
+    @apply font-body;
+    color: white !important;
+    text: white !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@import './custom-plugins.css';
+@import './rich-text-editor.css';
+
+
+/* ============================================
+   Aside global style – épuré, moderne, premium
+   Tout forcé avec !important (desktop uniquement)
+   ============================================ */
+@media (min-width: 1024px) {
+
+  /* Forcer tout le texte de l'aside et ses enfants en blanc */
+  aside,
+  aside * {
+    color: white !important;
+    font-weight: 50 !important;
+  }
+
+  /* Forcer les icônes SVG en blanc */
+  aside svg {
+    fill: white !important;
+    stroke: white !important;
+  }
+
+  /* Background premium dégradé + ombre + coins arrondis */
+  aside {
+    background: linear-gradient(180deg, #0d0d0f, #121215, #1a1a1d) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    transition: all 0.3s ease-in-out !important;
+  }
+
+  /* Hover subtil pour les liens/menu items */
+  aside a,
+  aside button {
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+
+  aside a:hover,
+  aside button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    /* léger effet de survol */
+    color: white !important;
+  }
+
+  /* Scrollbar custom (optionnel, pour un look pro) */
+  aside::-webkit-scrollbar {
+    width: 6px !important;
+  }
+
+  aside::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 3px !important;
+  }
+
+  aside::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+
+  /* Forcer toutes les bordures internes en transparent (optionnel) */
+  aside * {
+    border-color: transparent !important;
+  }
+
+  aside a :hover {
+    color: black !important;
+    /* texte devient noir au hover */
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    /* léger effet de survol si besoin */
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+  }
+
+
+}
+
+
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: white !important;
+}
